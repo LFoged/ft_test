@@ -51,7 +51,7 @@ exports.promiseAnyRequest = ({
           statusCode: res.statusCode,
           statusMessage: res.statusMessage,
           headers: res.headers,
-          payload: data
+          payload: data || {}
         };
 
         return resolve(resData)
