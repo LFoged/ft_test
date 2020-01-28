@@ -1,6 +1,12 @@
 'use strict';
 
+// own modules
+const { httpsGet } = require('./get');
+const { httpsAny } = require('./any');
+
+
+// functions exposed for external use
 module.exports = {
-  get: require('./get'),
-  any: require('./any')
+  httpsGet,
+  httpsAny
 };
