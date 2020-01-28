@@ -25,22 +25,32 @@ Returns:
 - ```[package].httpsAny()``` accepts an Array of request Objects. Makes request for each Object and optionally JSON parses response. Responds with Promise that resolves to Array of Objects, containing response info. (statusCode, statusMessage, headers and response 'data').  
 Accepts:  
 ```
-  { 
-    method: String (required), 
-    url: String (required), 
-    payload: Object (optional),
-    headers: Object (optional),
-    isJSON: Boolean (optional)
-  }
+  [
+    { 
+      method: String (required), 
+      url: String (required), 
+      payload: Object (optional),
+      headers: Object (optional),
+      isJSON: Boolean (optional)
+    },
+    {
+      ...
+    }
+  ]
 ```
 Returns:  
 ```
-  { 
-    statusCode: Number (response statusCode), 
-    statusMessage: String (response statusMessage), 
-    headers: Object (response headers),
-    payload: String or Object (if 'isJSON' is true)
-  }
+  [
+    { 
+      statusCode: Number (response statusCode), 
+      statusMessage: String (response statusMessage), 
+      headers: Object (response headers),
+      payload: String or Object (if 'isJSON' is true)
+    },
+    {
+      ...
+    }
+  ]
 ```
 
 #### Example
