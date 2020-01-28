@@ -14,7 +14,9 @@ Best suited for JSON, but ```httpsAny()``` can be used for other formats.
 Run ```npm run example``` from inside package to send example requests => responses logged to console. 
 
 ### Interface
-- ```[package].httpsGet()``` accepts an Array of url strings. Makes GET request for each string and JSON parses response. Responds with Promise that resolves to Array of responses.  
+- ```[package].httpsGet()``` accepts an Array of url strings.  
+Makes GET request for each string and JSON parses response.  
+Responds with Promise that resolves to Array of responses.  
 Accepts:  
 ```['url', 'url', 'url', ...]```  
 Returns:  
@@ -22,7 +24,9 @@ Returns:
 
 <br>
 
-- ```[package].httpsAny()``` accepts an Array of request Objects. Makes request for each Object and optionally JSON parses response. Responds with Promise that resolves to Array of Objects, containing response info. (statusCode, statusMessage, headers and response 'data').  
+- ```[package].httpsAny()``` accepts an Array of request Objects.  
+Makes request for each Object and optionally JSON parses response (defaults to ```true```).  
+Responds with Promise that resolves to Array of Objects, containing response info. (statusCode, statusMessage, headers and response 'data').  
 Accepts:  
 ```
   [
@@ -31,7 +35,7 @@ Accepts:
       url: String (required), 
       payload: Object (optional),
       headers: Object (optional),
-      isJSON: Boolean (optional)
+      isJSON: Boolean (optional - defaults to true)
     },
     {
       ...
@@ -45,7 +49,7 @@ Returns:
       statusCode: Number (response statusCode), 
       statusMessage: String (response statusMessage), 
       headers: Object (response headers),
-      payload: String or Object (if 'isJSON' is true)
+      payload: String or Object
     },
     {
       ...
