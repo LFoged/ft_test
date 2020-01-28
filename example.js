@@ -1,11 +1,11 @@
 'use strict';
-const requester = require('./index');
+const requestMultipleUrls = require('./index');
 
 
 (() => {
   /* GET */
   // example of how to use 'httpsGet'
-  const exampleGet = requester.httpsGet([
+  const exampleGet = requestMultipleUrls.httpsGet([
     'https://ft-tech-test-example.s3-eu-west-1.amazonaws.com/ftse-fsi.json',
     'https://ft-tech-test-example.s3-eu-west-1.amazonaws.com/gbp-hkd.json',
     'https://ft-tech-test-example.s3-eu-west-1.amazonaws.com/gbp-usd.json'
@@ -21,7 +21,7 @@ const requester = require('./index');
 
   /* ANY */
   // example of how to use 'httpsAny'
-  const exampleAny = requester.httpsAny([
+  const exampleAny = requestMultipleUrls.httpsAny([
     {
       method: 'POST',
       url: 'https://jsonplaceholder.typicode.com/posts',
